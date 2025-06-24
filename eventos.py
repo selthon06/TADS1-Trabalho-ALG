@@ -45,3 +45,35 @@ def buscar_evento_por_nome():
             print("Participantes:", evento["participantes"])
             return
     print("Evento não encontrado.")
+
+
+
+def adicionar_participante_evento():
+    print('\n--- Adicionar Participante a Evento ---')
+    nome_evento = input("Nome do evento: ")
+    try:
+        codigo_part = int(input("Código do participante: "))
+    except ValueError:
+        print("Código inválido!")
+        return
+
+    evento_encontrado = None
+    for evento in eventos:
+        if evento["nome"].lower() == nome_evento.lower():
+            evento_encontrado = evento
+            break
+
+    if not evento_encontrado:
+        print("Evento não encontrado.")
+        return
+
+    for participante in participantes:
+        if participante["codigo"] == codigo_part:
+            if codigo_part not in evento_encontrado["participantes"]:
+                evento_encontrado["participantes"].append(codigo_part)
+                print("Participante adicionado com sucesso.")
+            else:
+                print("Participante já está inscrito neste evento.")
+            return
+
+    print("Participante não encontrado.")
