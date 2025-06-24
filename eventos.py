@@ -34,3 +34,14 @@ def cadastrar_evento():
 #            print(f"Evento '{nome}' removido com sucesso.")
 #            return
 #    print("Evento não encontrado.")
+
+
+def buscar_evento_por_nome():
+    print('\n--- Buscar Evento ---')
+    nome = input("Digite o nome do evento: ")
+    for evento in eventos:
+        if evento["nome"].lower() == nome.lower():
+            print(f"Nome: {evento['nome']} | Data: {evento['data']} | Tema: {evento['tema']}")
+            print("Participantes:", evento["participantes"])
+            return
+    print("Evento não encontrado.")
