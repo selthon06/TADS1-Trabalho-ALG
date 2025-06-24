@@ -8,3 +8,32 @@ def listar_participantes():
 
     for p in participantes:
         print(f"Código: {p['codigo']} | Nome: {p['nome']} | Email: {p['email']}")
+
+
+
+def cadastrar_participante():
+    print('\n--- Cadastro de Novo Participante ---')
+    try:
+        codigo = int(input("Código do participante: "))
+    except ValueError:
+        print("Código inválido.")
+        return
+
+    for p in participantes:
+        if p["codigo"] == codigo:
+            print("Já existe um participante com esse código.")
+            return
+
+    nome = input("Nome completo: ")
+    email = input("E-mail: ")
+    preferencias = input("Preferências temáticas (separadas por vírgula): ").split(',')
+
+    novo_participante = {
+        "codigo": codigo,
+        "nome": nome,
+        "email": email,
+        "preferencias": [pref.strip() for pref in preferencias]
+    }
+
+    participantes.append(novo_participante)
+    print("Participante cadastrado com sucesso.")
