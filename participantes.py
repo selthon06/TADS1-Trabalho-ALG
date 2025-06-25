@@ -37,3 +37,22 @@ def cadastrar_participante():
 
     participantes.append(novo_participante)
     print("Participante cadastrado com sucesso.")
+
+
+def remover_participante():
+    print('\n--- Remover Participante ---')
+    try:
+        codigo = int(input("Informe o código do participante: "))
+    except ValueError:
+        print("Código inválido.")
+        return
+
+    for p in participantes:
+        if p["codigo"] == codigo:
+            participantes.remove(p)
+            print("Participante removido.")
+            return
+
+    print("Participante não encontrado.")
+
+
