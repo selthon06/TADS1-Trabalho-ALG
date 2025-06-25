@@ -56,3 +56,20 @@ def remover_participante():
     print("Participante não encontrado.")
 
 
+
+def buscar_participante():
+    print('\n--- Buscar Participante ---')
+    try:
+        codigo = int(input("Informe o código do participante: "))
+    except ValueError:
+        print("Código inválido.")
+        return
+
+    for p in participantes:
+        if p["codigo"] == codigo:
+            print(f"Nome: {p['nome']} | Email: {p['email']} | Preferências: {', '.join(p['preferencias'])}")
+            return
+
+    print("Participante não encontrado.")
+
+
