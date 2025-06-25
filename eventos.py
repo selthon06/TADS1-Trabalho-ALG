@@ -77,3 +77,27 @@ def adicionar_participante_evento():
             return
 
     print("Participante não encontrado.")
+
+
+
+def listar_participantes_evento():
+    print('\n--- Participantes de um Evento ---')
+    nome_evento = input("Digite o nome do evento: ")
+
+    for evento in eventos:
+        if evento["nome"].lower() == nome_evento.lower():
+            if not evento["participantes"]:
+                print("Nenhum participante inscrito nesse evento.")
+                return
+
+            print(f"Participantes do evento '{evento['nome']}':")
+            for codigo in evento["participantes"]:
+                # Buscar dados do participante pelo código
+                participante = next((p for p in participantes if p["codigo"] == codigo), None)
+                if participante:
+                    print(f" - {participante['nome']} (Código: {participante['codigo']})")
+                else:
+                    print(f" - Participante com código {codigo} não encontrado.")
+            return
+
+    print("Evento não encontrado.")
