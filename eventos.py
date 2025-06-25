@@ -31,7 +31,7 @@ def cadastrar_evento():
 #    for evento in eventos:
 #        if evento["nome"].lower() == nome.lower():
 #            eventos.remove(evento)
-#            print(f"Evento '{nome}' removido com sucesso.")
+#            print(f"Evento '{nome}' removido com sucesso!.")
 #            return
 #    print("Evento não encontrado.")
 
