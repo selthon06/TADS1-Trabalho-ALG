@@ -1,3 +1,5 @@
+from menu_eventos import menu_eventos
+
 def menu():
     while True:
         print("\n=== Sistema de Gerenciamento de Eventos - Comunidade Tech ===")
