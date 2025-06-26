@@ -1,4 +1,5 @@
 from menu_eventos import menu_eventos
+from menu_participantes import menu_participantes
 
 def menu():
     while True:
