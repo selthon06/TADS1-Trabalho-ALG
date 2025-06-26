@@ -1,3 +1,5 @@
+from datetime import datetime
+
 def listar_eventos():
     print('\n--- Lista de Eventos ---')
     if not eventos:
@@ -200,3 +202,33 @@ def filtrar_eventos_por_tema():
             print(f"- {evento['nome']} | Data: {evento['data']}")
     else:
         print("Nenhum evento encontrado com esse tema.")
+
+
+def filtrar_eventos_por_data():
+    print('\n--- Filtrar eventos por faixa de datas ---')
+    if not eventos:
+        print("Nenhum evento cadastrado.")
+        return
+
+    try:
+        data_inicio = input("Digite a data inicial (dd/mm/aaaa): ")
+        data_fim = input("Digite a data final (dd/mm/aaaa): ")
+
+        data_inicio = datetime.strptime(data_inicio, "%d/%m/%Y")
+        data_fim = datetime.strptime(data_fim, "%d/%m/%Y")
+
+        print(f"\nEventos entre {data_inicio.date()} e {data_fim.date()}:")
+
+        encontrados = False
+        for evento in eventos:
+            data_evento = datetime.strptime(evento["data"], "%d/%m/%Y")
+            if data_inicio <= data_evento <= data_fim:
+                print(f"- {evento['nome']} | Data: {evento['data']} | Tema: {evento['tema']}")
+                encontrados = True
+
+        if not encontrados:
+            print("Nenhum evento encontrado nesse intervalo.")
+
+    except ValueError:
+        print("Formato de data inválido. Use dd/mm/aaaa.")
+
