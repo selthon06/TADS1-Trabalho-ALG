@@ -13,11 +13,12 @@ def menu_eventos():
         print('(8) - Relatório: Participantes mais ativos')
         print('(9) - Eventos com menos de 2 participantes')
         print('(10) - Remover participantes duplicados por evento')
+        print('(11) - Filtrar eventos por tema')
         print('(0) - Voltar')
 
         try:
             op = int(input("Digite uma opção: "))
-            if op < 0 or op > 10:
+            if op < 0 or op > 11:
                 print("Opção inválida!")
                 continue
         except ValueError:
@@ -43,6 +44,9 @@ def menu_eventos():
         elif op == 9:
             eventos.eventos_com_poucos_participantes()
         elif op == 10:
+  
+        elif op == 11:
+eventos.filtrar_eventos_por_tema()
             eventos.remover_participantes_duplicados()
         elif op == 0:
             break
