@@ -119,3 +119,29 @@ def temas_mais_frequentes():
 
     for tema, qtd in temas_ordenados:
         print(f"Tema: {tema.capitalize()} | Total de eventos: {qtd}")
+
+
+def participantes_mais_ativos():
+    print('\n--- Participantes mais ativos ---')
+    if not eventos:
+        print("Nenhum evento cadastrado.")
+        return
+
+    contagem = {}
+
+    for evento in eventos:
+        for codigo in evento["participantes"]:
+            contagem[codigo] = contagem.get(codigo, 0) + 1
+
+    if not contagem:
+        print("Nenhum participante inscrito em eventos.")
+        return
+
+    participantes_ordenados = sorted(contagem.items(), key=lambda x: x[1], reverse=True)
+
+    for codigo, qtd in participantes_ordenados:
+        participante = next((p for p in participantes if p["codigo"] == codigo), None)
+        if participante:
+            print(f"{participante['nome']} (Código: {codigo}) - {qtd} evento(s)")
+        else:
+            print(f"Código {codigo} - {qtd} evento(s)")
