@@ -11,6 +11,7 @@ def menu_eventos():
         print('(4) - Buscar evento por nome')
         print('(5) - Adicionar participante a evento')
         print('(6) - Listar participantes de um evento')
+        print('(7) - Relatório: Temas mais frequentes')
         print('(0) - Voltar')
         op = ler_opcao(6)
 
@@ -25,6 +26,8 @@ def menu_eventos():
         elif op == 5:
             eventos.adicionar_participante_evento()
         elif op == 6:
-            eventos.listar_participantes_evento()
+          eventos.listar_participantes_evento()
+        elif op == 7:
+    eventos.temas_mais_frequentes()
         elif op == 0:
             break
