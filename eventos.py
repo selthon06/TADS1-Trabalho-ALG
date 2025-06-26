@@ -145,3 +145,19 @@ def participantes_mais_ativos():
             print(f"{participante['nome']} (Código: {codigo}) - {qtd} evento(s)")
         else:
             print(f"Código {codigo} - {qtd} evento(s)")
+
+
+def eventos_com_poucos_participantes():
+    print('\n--- Eventos com menos de 2 participantes ---')
+    if not eventos:
+        print("Nenhum evento cadastrado.")
+        return
+
+    encontrados = False
+    for evento in eventos:
+        if len(evento["participantes"]) < 2:
+            print(f"- {evento['nome']} ({len(evento['participantes'])} participante(s))")
+            encontrados = True
+
+    if not encontrados:
+        print("Todos os eventos têm dois ou mais participantes.")
