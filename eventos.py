@@ -183,3 +183,20 @@ def remover_participantes_duplicados():
         print("Nenhuma duplicata encontrada.")
     else:
         print(f"Total de {total_corrigidos} duplicata(s) removida(s) no sistema.")
+
+
+def filtrar_eventos_por_tema():
+    print('\n--- Filtrar eventos por tema ---')
+    if not eventos:
+        print("Nenhum evento cadastrado.")
+        return
+
+    tema_busca = input("Digite o tema para filtrar: ").strip().lower()
+    encontrados = [evento for evento in eventos if evento['tema'].strip().lower() == tema_busca]
+
+    if encontrados:
+        print(f"\nEventos com tema '{tema_busca}':")
+        for evento in encontrados:
+            print(f"- {evento['nome']} | Data: {evento['data']}")
+    else:
+        print("Nenhum evento encontrado com esse tema.")
