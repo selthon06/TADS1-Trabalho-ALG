@@ -161,3 +161,25 @@ def eventos_com_poucos_participantes():
 
     if not encontrados:
         print("Todos os eventos têm dois ou mais participantes.")
+
+
+def remover_participantes_duplicados():
+    print('\n--- Remoção de participantes duplicados por evento ---')
+    total_corrigidos = 0
+
+    for evento in eventos:
+        participantes_antes = len(evento["participantes"])
+        # Remove duplicados usando set, mantendo a ordem
+        participantes_unicos = list(dict.fromkeys(evento["participantes"]))
+        evento["participantes"] = participantes_unicos
+        participantes_depois = len(participantes_unicos)
+
+        removidos = participantes_antes - participantes_depois
+        if removidos > 0:
+            print(f"- {evento['nome']}: {removidos} duplicata(s) removida(s)")
+            total_corrigidos += removidos
+
+    if total_corrigidos == 0:
+        print("Nenhuma duplicata encontrada.")
+    else:
+        print(f"Total de {total_corrigidos} duplicata(s) removida(s) no sistema.")
