@@ -4,19 +4,16 @@ from menu_participantes import menu_participantes
 def menu():
     while True:
         print("\n=== Sistema de Gerenciamento de Eventos - Comunidade Tech ===")
-        print("1. Listar eventos")
-        print("2. Listar partpantes de um evento")
-        print("3. Buacar participante por código")
+        print("1. Menu de Eventos")
+        print("2. Menu de Participantes")
         print("0. Sair")
 
-        opcao = input("Escolhauma opção: ")
+        opcao = input("Escolha uma opção: ")
 
         if opcao == '1':
-            print("Função listar eventos ainda não implementada.")
+            menu_eventos()
         elif opcao == '2':
-            print("Função listar participantes ainda não implemetada.")
-        elif opcao == '3':
-            print("Função buscar participante ainda não implementada.")
+            menu_participantes()
         elif opcao == '0':
             print("Encerrando o sistema. Até mais!")
             break
@@ -24,4 +21,4 @@ def menu():
             print("Opção inválida. Tente novamente.")
 
 if __name__ == "__main__":
-    menu_principal()
+    menu()
