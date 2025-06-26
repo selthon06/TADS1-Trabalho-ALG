@@ -101,3 +101,21 @@ def listar_participantes_evento():
             return
 
     print("Evento não encontrado.")
+
+
+def temas_mais_frequentes():
+    print('\n--- Temas mais frequentes ---')
+    if not eventos:
+        print("Nenhum evento cadastrado.")
+        return
+
+    temas = {}
+    for evento in eventos:
+        tema = evento["tema"].strip().lower()
+        temas[tema] = temas.get(tema, 0) + 1
+
+    # Ordenar por qtde (do maior para o menor)
+    temas_ordenados = sorted(temas.items(), key=lambda x: x[1], reverse=True)
+
+    for tema, qtd in temas_ordenados:
+        print(f"Tema: {tema.capitalize()} | Total de eventos: {qtd}")
