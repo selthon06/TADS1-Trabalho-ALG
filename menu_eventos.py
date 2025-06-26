@@ -14,7 +14,7 @@ def menu_eventos():
 
         try:
             op = int(input("Digite uma opção: "))
-            if op < 0 or op > 7:
+            if op < 0 or op > 8:
                 print("Opção inválida!")
                 continue
         except ValueError:
@@ -35,5 +35,9 @@ def menu_eventos():
             eventos.listar_participantes_evento()
         elif op == 7:
             eventos.temas_mais_frequentes()
+
+        elif op == 8:
+    eventos.participantes_mais_ativos()
+
         elif op == 0:
             break
