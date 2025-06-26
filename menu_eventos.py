@@ -1,7 +1,5 @@
 import eventos
 
-
-
 def menu_eventos():
     while True:
         print('\n========= MENU DE EVENTOS =========')
@@ -13,7 +11,15 @@ def menu_eventos():
         print('(6) - Listar participantes de um evento')
         print('(7) - Relatório: Temas mais frequentes')
         print('(0) - Voltar')
-        op = ler_opcao(6)
+
+        try:
+            op = int(input("Digite uma opção: "))
+            if op < 0 or op > 7:
+                print("Opção inválida!")
+                continue
+        except ValueError:
+            print("Digite um número válido.")
+            continue
 
         if op == 1:
             eventos.listar_eventos()
@@ -26,8 +32,8 @@ def menu_eventos():
         elif op == 5:
             eventos.adicionar_participante_evento()
         elif op == 6:
-          eventos.listar_participantes_evento()
+            eventos.listar_participantes_evento()
         elif op == 7:
-    eventos.temas_mais_frequentes()
+            eventos.temas_mais_frequentes()
         elif op == 0:
             break
