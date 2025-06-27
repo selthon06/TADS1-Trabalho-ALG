@@ -260,3 +260,23 @@ def eventos_por_tema():
     print("Tema(s) e quantidade de eventos:")
     for tema, qtd in contagem.items():
         print(f"- {tema.capitalize()}: {qtd} evento(s)")
+
+
+def taxa_media_participacao_por_tema():
+    print('\n--- Relatório: Taxa média de participação por tema ---')
+    if not eventos:
+        print("Nenhum evento cadastrado.")
+        return
+
+    temas = {}
+    for evento in eventos:
+        tema = evento["tema"].strip().lower()
+        qtd_participantes = len(evento["participantes"])
+        if tema not in temas:
+            temas[tema] = {"total_eventos": 0, "total_participantes": 0}
+        temas[tema]["total_eventos"] += 1
+        temas[tema]["total_participantes"] += qtd_participantes
+
+    for tema, dados in temas.items():
+        media = dados["total_participantes"] / dados["total_eventos"]
+        print(f"{tema.capitalize()}: {media:.1f} participantes por evento")
