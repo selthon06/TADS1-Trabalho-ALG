@@ -244,3 +244,19 @@ def atualizar_tema_evento():
             print("Tema atualizado com sucesso.")
             return
     print("Evento não encontrado.")
+
+
+def eventos_por_tema():
+    print('\n--- Relatório: Quantidade de eventos por tema ---')
+    if not eventos:
+        print("Nenhum evento cadastrado.")
+        return
+
+    contagem = {}
+    for evento in eventos:
+        tema = evento["tema"].strip().lower()
+        contagem[tema] = contagem.get(tema, 0) + 1
+
+    print("Tema(s) e quantidade de eventos:")
+    for tema, qtd in contagem.items():
+        print(f"- {tema.capitalize()}: {qtd} evento(s)")
