@@ -73,3 +73,15 @@ def buscar_participante():
     print("Participante não encontrado.")
 
 
+def atualizar_email_participante():
+    print('\n--- Atualizar E-mail de Participante ---')
+    codigo = input("Digite o código do participante: ").strip()
+    for p in participantes:
+        if p["codigo"] == codigo:
+            novo_email = input("Digite o novo e-mail: ").strip()
+            p["email"] = novo_email
+            print("E-mail atualizado com sucesso.")
+            return
+    print("Participante não encontrado.")
+
+
