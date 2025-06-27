@@ -232,3 +232,15 @@ def filtrar_eventos_por_data():
     except ValueError:
         print("Formato de data inválido. Use dd/mm/aaaa.")
 
+
+
+def atualizar_tema_evento():
+    print('\n--- Atualizar Tema de Evento ---')
+    nome = input("Digite o nome do evento: ").strip()
+    for evento in eventos:
+        if evento["nome"].lower() == nome.lower():
+            novo_tema = input("Digite o novo tema: ").strip()
+            evento["tema"] = novo_tema
+            print("Tema atualizado com sucesso.")
+            return
+    print("Evento não encontrado.")
