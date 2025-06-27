@@ -17,11 +17,12 @@ def menu_eventos():
         print('(12) - Filtrar eventos por faixa de datas')
         print('(13) - Atualizar tema de um evento')
         print('(14) - Relatório: Quantidade de eventos por tema')
+        print('(15) - Relatório: Taxa média de participação por tema')
         print('(0) - Voltar')
 
         try:
             op = int(input("Digite uma opção: "))
-            if op < 0 or op > 14:
+            if op < 0 or op > 15:
                 print("Opção inválida!")
                 continue
         except ValueError:
@@ -56,5 +57,7 @@ def menu_eventos():
             eventos.atualizar_tema_evento()
         elif op == 14:
             eventos.eventos_por_tema()
+        elif op == 15:
+     eventos.taxa_media_participacao_por_tema()
         elif op == 0:
             break
