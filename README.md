@@ -1,6 +1,6 @@
 # Sistema de Gerenciamento de Eventos – Comunidade Tech
 
-Este sistema foi desenvolvido como parte do projeto da disciplina de Algoritmos. Ele tem como objetivo informatizar a gestão de eventos técnicos e educacionais promovidos pela Comunidade Tech.
+Este sistema foi desenvolvido como parte do projeto da disciplina de Algoritmos e Lógica de Programação. Ele tem como objetivo informatizar a gestão de eventos técnicos e educacionais promovidos pela Comunidade Tech.
 
 ## Funcionalidades
 
@@ -42,4 +42,4 @@ Este sistema foi desenvolvido como parte do projeto da disciplina de Algoritmos.
 - Uso de *args, **kwargs, compreensão de listas, try/except
 
 ## Autor
-Desenvolvido por Selthon para a disciplina de Algoritmos e Estruturas de Dados – TADS.
+Desenvolvido por Selthon para a disciplina de Algoritmos e Lógica de Programação– TADS.
