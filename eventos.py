@@ -27,15 +27,15 @@ def cadastrar_evento():
     print(f"Evento '{nome}' cadastrado com sucesso!")
 
 
-#def remover_evento():
-#    print('\n--- Remover Evento ---')
-#    nome = input("Digite o nome do evento que deseja remover: ")
-#    for evento in eventos:
-#        if evento["nome"].lower() == nome.lower():
-#            eventos.remove(evento)
-#            print(f"Evento '{nome}' removido com sucesso!.")
-#            return
-#    print("Evento não encontrado.")
+def remover_evento():
+    print('\n--- Remover Evento ---')
+    nome = input("Digite o nome do evento que deseja remover: ")
+    for evento in eventos:
+        if evento["nome"].lower() == nome.lower():
+            eventos.remove(evento)
+            print(f"Evento '{nome}' removido com sucesso!.")
+            return
+    print("Evento não encontrado.")
 
 
 def buscar_evento_por_nome():
