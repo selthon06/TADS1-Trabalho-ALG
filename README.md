@@ -36,7 +36,6 @@ Este sistema foi desenvolvido como parte do projeto da disciplina de Algoritmos 
 
 
 ## Tecnologias utilizadas
-- Python 3.x
 - Estruturas de dados: listas e dicionários
 - Modularização de código
 - Uso de *args, **kwargs, compreensão de listas, try/except
