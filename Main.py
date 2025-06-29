@@ -1,7 +1,7 @@
 from menu_eventos import menu_eventos
 from menu_participantes import menu_participantes
 
-def menu():
+def menu_principal():
     while True:
         print("\n=== Sistema de Gerenciamento de Eventos - Comunidade Tech ===")
         print("1. Menu de Eventos")
@@ -21,4 +21,4 @@ def menu():
             print("Opção inválida. Tente novamente.")
 
 if __name__ == "__main__":
-    menu()
+    menu_principal()
