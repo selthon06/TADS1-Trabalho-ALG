@@ -10,7 +10,6 @@ def listar_participantes():
         print(f"Código: {p['codigo']} | Nome: {p['nome']} | Email: {p['email']}")
 
 
-
 def cadastrar_participante():
     print('\n--- Cadastro de Novo Participante ---')
     try:
@@ -56,7 +55,6 @@ def remover_participante():
     print("Participante não encontrado.")
 
 
-
 def buscar_participante():
     print('\n--- Buscar Participante ---')
     try:
@@ -75,7 +73,12 @@ def buscar_participante():
 
 def atualizar_email_participante():
     print('\n--- Atualizar E-mail de Participante ---')
-    codigo = input("Digite o código do participante: ").strip()
+    try:
+        codigo = int(input("Digite o código do participante: "))
+    except ValueError:
+        print("Código inválido.")
+        return
+
     for p in participantes:
         if p["codigo"] == codigo:
             novo_email = input("Digite o novo e-mail: ").strip()
@@ -83,5 +86,3 @@ def atualizar_email_participante():
             print("E-mail atualizado com sucesso.")
             return
     print("Participante não encontrado.")
-
-
