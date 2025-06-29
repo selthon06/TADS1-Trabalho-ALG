@@ -58,6 +58,6 @@ def menu_eventos():
         elif op == 14:
             eventos.eventos_por_tema()
         elif op == 15:
-     eventos.taxa_media_participacao_por_tema()
+            eventos.taxa_media_participacao_por_tema()
         elif op == 0:
             break
