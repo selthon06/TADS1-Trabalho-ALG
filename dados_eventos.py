@@ -1,19 +1,19 @@
 eventos = [
     {
         "nome": "Fazendo a diferença no IF",
-        "data": "2025-06-15",
-        "tema": "Como lidar com as atividades do IF",
+        "data": "15-05-2025",
+        "tema": "IF",
         "participantes": [1, 2]
     },
     {
         "nome": "Desenvolver na Web",
-        "data": "2025-06-20",
-        "tema": "aprendendo a desenvolver e programar sites",
+        "data": "20-06-2020",
+        "tema": "sites",
         "participantes": [3]
     },
     {
         "nome": "Palestra sobre Segurança",
-        "data": "2025-06-25",
+        "data": "25-06-2026",
         "tema": "Segurança",
         "participantes": [2, 3, 4]
     }
