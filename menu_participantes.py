@@ -20,7 +20,11 @@ def menu_participantes():
             continue
 
         if op == 1:
-            participantes.listar_participantes()
+            termo = input("Deseja filtrar por nome? (pressione Enter para listar todos): ").strip()
+            if termo:
+                participantes.listar_participantes_com_args(termo)
+            else:
+                participantes.listar_participantes_com_args()
         elif op == 2:
             participantes.cadastrar_participante()
         elif op == 3:
@@ -28,6 +32,11 @@ def menu_participantes():
         elif op == 4:
             participantes.buscar_participante()
         elif op == 5:
-            participantes.atualizar_email_participante()
+            try:
+                codigo = int(input("Digite o código do participante: "))
+                novo_email = input("Digite o novo e-mail: ").strip()
+                participantes.atualizar_email_participante_com_kwargs(codigo=codigo, novo_email=novo_email)
+            except ValueError:
+                print("Código inválido.")
         elif op == 0:
             break
