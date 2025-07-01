@@ -1,12 +1,15 @@
 import dados_participantes
 
-def listar_participantes():
+def listar_participantes_com_args(*filtros):
     print('\n--- Lista de Participantes ---')
     if not dados_participantes.participantes:
         print("Nenhum participante cadastrado.")
         return
 
     for p in dados_participantes.participantes:
+        if filtros:
+            if not any(filtro.lower() in p["nome"].lower() for filtro in filtros):
+                continue
         print(f"Código: {p['codigo']} | Nome: {p['nome']} | Email: {p['email']}")
 
 def cadastrar_participante():
@@ -67,17 +70,17 @@ def buscar_participante():
 
     print("Participante não encontrado.")
 
-def atualizar_email_participante():
+def atualizar_email_participante_com_kwargs(**kwargs):
     print('\n--- Atualizar E-mail de Participante ---')
-    try:
-        codigo = int(input("Digite o código do participante: "))
-    except ValueError:
-        print("Código inválido.")
+    codigo = kwargs.get("codigo")
+    novo_email = kwargs.get("novo_email")
+
+    if not isinstance(codigo, int) or not novo_email:
+        print("Parâmetros inválidos.")
         return
 
     for p in dados_participantes.participantes:
         if p["codigo"] == codigo:
-            novo_email = input("Digite o novo e-mail: ").strip()
             p["email"] = novo_email
             print("E-mail atualizado com sucesso.")
             return
